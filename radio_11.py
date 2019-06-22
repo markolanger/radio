@@ -40,7 +40,7 @@ def refresh_menu_screen():
 		station_status = "playing"
 		status_font = black
 	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
-	time_label = station_font.render(current_time, 1, (black))
+	time_label = station_font.render(current_time, 1, (font))
 	station_name=station_font.render(line1, 1, (black))
 	additional_data=station_font.render(line2, 1, (blue))
 	station_label=title_font.render(station_status, 1, (status_font))
