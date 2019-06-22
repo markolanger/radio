@@ -74,6 +74,11 @@ def main():
 	print "main"
         while 1:
                 for event in pygame.event.get():
+			print "3"
+			time.sleep(0.2)
+			pygame.display.update()
+			pygame.display.flip()
+			refresh_menu_screen()
                         if event.type == pygame.MOUSEBUTTONDOWN:
                                 print "screen pressed" #for debugging purposes
                                 pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
@@ -85,13 +90,7 @@ def main():
                         if event.type == KEYDOWN:
                                 if event.key == K_ESCAPE:
 					sys.exit()
-			else:
-	        	print "3"
-			time.sleep(0.2)
-			pygame.display.update()
-			pygame.display.flip()
-			refresh_menu_screen()
-			#main()
+
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
