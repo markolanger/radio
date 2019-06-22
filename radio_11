@@ -8,7 +8,7 @@ import datetime
 pygame.init()
 
 subprocess.call('mpc play' , shell=True)
-running = 1
+running = True
 
 def refresh_menu_screen():
 #set up the fixed items on the menu
@@ -78,15 +78,15 @@ def refresh_menu_screen():
 	pygame.display.flip()
 
 def main():
-	
-	while running:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				running = False
-		time.sleep(0.2)
 		pygame.display.update()
-		main()
+		
 
+while running:
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+	time.sleep(0.2)
+	pygame.display.update()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
