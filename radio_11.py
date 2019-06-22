@@ -81,9 +81,9 @@ def main():
         while 1:
                 for event in pygame.event.get():
                         if event.type == pygame.MOUSEBUTTONDOWN:
-                                print "screen pressed" #for debugging purposes
+                                #print "screen pressed" #for debugging purposes
                                 pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
-                                print pos #for checking
+                                #print pos #for checking
                                 pygame.draw.circle(screen, white, pos, 2, 0) #for debugging purposes - adds a small dot where the screen is pressed
                                 on_click()
 
@@ -93,9 +93,9 @@ def main():
                                         sys.exit()
         time.sleep(0.2)        
 	pygame.display.update()
-	pygame.display.flip()
-	refresh_menu_screen() 
-	main()
+	#pygame.display.flip()
+	#refresh_menu_screen() 
+	#main()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
