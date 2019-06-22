@@ -78,15 +78,21 @@ def refresh_menu_screen():
 	pygame.display.flip()
 
 def main():
-		pygame.display.update()
-		
+        while 1:
+                for event in pygame.event.get():
+                        if event.type == pygame.MOUSEBUTTONDOWN:
+                                print "screen pressed" #for debugging purposes
+                                pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
+                                print pos #for checking
+                                pygame.draw.circle(screen, white, pos, 2, 0) #for debugging purposes - adds a small dot where the screen is pressed
+                                on_click()
 
-while running:
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			running = False
-	time.sleep(0.2)
-	pygame.display.flip()
+#ensure there is always a safe way to end the program if the touch screen fails
+                        if event.type == KEYDOWN:
+                                if event.key == K_ESCAPE:
+                                        sys.exit()
+        time.sleep(0.2)        
+	pygame.display.update()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
