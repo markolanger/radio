@@ -45,9 +45,9 @@ def refresh_menu_screen():
 	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
 	
 	
-	screen.blit(station_label,(5,20))
-	screen.blit(station_name,(20,30))
-	screen.blit(additional_data,(30,40))
+	screen.blit(station_label,(5,0))
+	screen.blit(station_name,(5,20))
+	screen.blit(additional_data,(5,30))
 ######## add volume number
 	volume = subprocess.check_output("mpc volume", shell=True )
 	volume = volume[8:]
