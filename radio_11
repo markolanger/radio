@@ -36,7 +36,7 @@ def refresh_menu_screen():
 		status_font = red
 	else:
 		station_status = "playing"
-		status_font = green
+		status_font = black
 	
 	station_name=station_font.render(line1, 1, (red))
 	additional_data=station_font.render(line2, 1, (blue))
@@ -59,14 +59,14 @@ def refresh_menu_screen():
 	IP=IP[:3]
 	if IP =="192":
 		network_status = "online"
-		status_font = green
+		status_font = black
 
 	else:
 		network_status = "offline"
 		status_font = red
 
 	network_status_label = font.render(network_status, 1, (status_font))
-	screen.blit(network_status_label, (215,75))
+	screen.blit(network_status_label, (360,0))
 	pygame.display.flip()
 
 def main():
