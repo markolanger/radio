@@ -40,10 +40,10 @@ def refresh_menu_screen():
 		station_status = "playing"
 		status_font = black
 	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
-	time_label = station_font.render(current_time, 1, (font))
+	time_label = font.render(current_time, 1, (black))
 	station_name=station_font.render(line1, 1, (black))
 	additional_data=station_font.render(line2, 1, (blue))
-	station_label=title_font.render(station_status, 1, (status_font))
+	station_label=font.render(station_status, 1, (status_font))
 	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
 	screen.blit(time_label,   (360,  0))
 	screen.blit(station_label,(5,0))
