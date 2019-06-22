@@ -12,8 +12,6 @@ running = 1
 
 def refresh_menu_screen():
 #set up the fixed items on the menu
-	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
-	time_label = font.render(current_time, 1,(black))
 	screen.fill(white) #change the colours if needed
 	font=pygame.font.Font(None,15)
 	title_font=pygame.font.Font(None,15)
@@ -51,6 +49,9 @@ def refresh_menu_screen():
 	screen.blit(station_label,(5,0))
 	screen.blit(station_name,(5,20))
 	screen.blit(additional_data,(5,30))
+	
+	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
+	time_label = station_font.render(current_time, 1, (black))
 ######## add volume number
 	volume = subprocess.check_output("mpc volume", shell=True )
 	volume = volume[8:]
