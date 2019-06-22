@@ -78,7 +78,7 @@ def main():
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
 #set size of the screen
-size = width, height = 520, 300
+size = width, height = 800, 640
 screen = pygame.display.set_mode(size)
 
 #define colours
