@@ -10,7 +10,7 @@ pygame.init()
 #subprocess.call('mpc stop' , shell=True)
 #subprocess.call('mpc play' , shell=True)
 #subprocess.call('mpc volume 25' , shell=True)
-pygame.mouse.set_visible(1)
+pygame.mouse.set_visible(0)
 pygame.key.set_repeat(1, 30)
 
 running = True
