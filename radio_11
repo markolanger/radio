@@ -7,13 +7,14 @@ import glob
 pygame.init()
 
 subprocess.call('mpc play' , shell=True)
+running = 1
 
 def refresh_menu_screen():
 #set up the fixed items on the menu
 	screen.fill(white) #change the colours if needed
-	font=pygame.font.Font(None,24)
-	title_font=pygame.font.Font(None,34)
-	station_font=pygame.font.Font(None,20)
+	font=pygame.font.Font(None,15)
+	title_font=pygame.font.Font(None,15)
+	station_font=pygame.font.Font(None,15)
 ###### display the station name and split it into 2 parts : 
 	station = subprocess.check_output("mpc current", shell=True )
 	lines=station.split(":")
@@ -36,9 +37,14 @@ def refresh_menu_screen():
 	else:
 		station_status = "playing"
 		status_font = green
+	
 	station_name=station_font.render(line1, 1, (red))
 	additional_data=station_font.render(line2, 1, (blue))
+	
 	station_label=title_font.render(station_status, 1, (status_font))
+	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
+	
+	
 	screen.blit(station_label,(175,100))
 	screen.blit(station_name,(13,145))
 	screen.blit(additional_data,(12,160))
@@ -72,7 +78,7 @@ def main():
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
 #set size of the screen
-size = width, height = 320, 240
+size = width, height = 520, 300
 screen = pygame.display.set_mode(size)
 
 #define colours
