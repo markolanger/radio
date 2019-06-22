@@ -86,7 +86,7 @@ while running:
 		if event.type == pygame.QUIT:
 			running = False
 	time.sleep(0.2)
-	pygame.display.update()
+	pygame.display.flip()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
