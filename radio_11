@@ -93,6 +93,9 @@ def main():
                                         sys.exit()
         time.sleep(0.2)        
 	pygame.display.update()
+	pygame.display.flip()
+	refresh_menu_screen() 
+	main()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
