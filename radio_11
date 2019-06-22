@@ -45,15 +45,15 @@ def refresh_menu_screen():
 	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
 	
 	
-	screen.blit(station_label,(175,100))
-	screen.blit(station_name,(13,145))
-	screen.blit(additional_data,(12,160))
+	screen.blit(station_label,(5,20))
+	screen.blit(station_name,(20,20))
+	screen.blit(additional_data,(30,20))
 ######## add volume number
 	volume = subprocess.check_output("mpc volume", shell=True )
 	volume = volume[8:]
 	volume = volume[:-1]
 	volume_tag=font.render(volume, 1, (black))
-	screen.blit(volume_tag,(175,75))
+	screen.blit(volume_tag,(85,0))
 ####### check to see if the Radio is connected to the internet
 	IP = subprocess.check_output("hostname -I", shell=True )
 	IP=IP[:3]
@@ -78,7 +78,7 @@ def main():
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
 #set size of the screen
-size = width, height = 800, 640
+size = width, height = 520,300
 screen = pygame.display.set_mode(size)
 
 #define colours
