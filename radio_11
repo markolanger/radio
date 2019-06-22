@@ -4,6 +4,7 @@ import time
 import subprocess
 import os
 import glob
+import datetime
 pygame.init()
 
 subprocess.call('mpc play' , shell=True)
@@ -11,6 +12,8 @@ running = 1
 
 def refresh_menu_screen():
 #set up the fixed items on the menu
+	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
+	time_label = font.render(current_time, 1,(font_color))
 	screen.fill(white) #change the colours if needed
 	font=pygame.font.Font(None,15)
 	title_font=pygame.font.Font(None,15)
@@ -38,13 +41,13 @@ def refresh_menu_screen():
 		station_status = "playing"
 		status_font = black
 	
-	station_name=station_font.render(line1, 1, (red))
+	station_name=station_font.render(line1, 1, (black))
 	additional_data=station_font.render(line2, 1, (blue))
 	
 	station_label=title_font.render(station_status, 1, (status_font))
 	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
 	
-	
+	screen.blit(time_label,   (360,  0))
 	screen.blit(station_label,(5,0))
 	screen.blit(station_name,(5,20))
 	screen.blit(additional_data,(5,30))
@@ -66,7 +69,7 @@ def refresh_menu_screen():
 		status_font = red
 
 	network_status_label = font.render(network_status, 1, (status_font))
-	screen.blit(network_status_label, (360,0))
+	screen.blit(network_status_label, (260,0))
 	pygame.display.flip()
 
 def main():
