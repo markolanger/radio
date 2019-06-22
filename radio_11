@@ -38,6 +38,11 @@ def refresh_menu_screen():
 	else:
 		station_status = "playing"
 		status_font = black
+
+
+	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
+	time_label = station_font.render(current_time, 1, (black))
+	
 	
 	station_name=station_font.render(line1, 1, (black))
 	additional_data=station_font.render(line2, 1, (blue))
@@ -50,8 +55,7 @@ def refresh_menu_screen():
 	screen.blit(station_name,(5,20))
 	screen.blit(additional_data,(5,30))
 	
-	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
-	time_label = station_font.render(current_time, 1, (black))
+
 ######## add volume number
 	volume = subprocess.check_output("mpc volume", shell=True )
 	volume = volume[8:]
