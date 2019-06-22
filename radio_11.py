@@ -16,7 +16,7 @@ def refresh_menu_screen():
 	screen.fill(white) #change the colours if needed
 	font=pygame.font.Font(None,20)
 	title_font=pygame.font.Font(None,20)
-	station_font=pygame.font.Font(None,25)
+	station_font=pygame.font.Font(None,20)
 	###### display the station name and split it into 2 parts : 
 	station = subprocess.check_output("mpc current", shell=True )
 	lines=station.split(":")
@@ -47,8 +47,8 @@ def refresh_menu_screen():
 	pygame.draw.rect(screen, (black), (0,17,519,24), 2)
 	screen.blit(time_label,   (360,  0))
 	screen.blit(station_label,(5,0))
-	screen.blit(station_name,(5,20))
-	screen.blit(additional_data,(5,30))
+	screen.blit(station_name,(5,22))
+	screen.blit(additional_data,(0,42))
 	######## add volume number
 	volume = subprocess.check_output("mpc volume", shell=True )
 	volume = volume[8:]
