@@ -9,6 +9,7 @@ pygame.init()
 
 #subprocess.call('mpc stop' , shell=True)
 #subprocess.call('mpc play' , shell=True)
+#subprocess.call('mpc volume 25' , shell=True)
 pygame.mouse.set_visible(1)
 pygame.key.set_repeat(1, 30)
 
@@ -87,8 +88,8 @@ def main():
 				screen.fill(black)
 				font=pygame.font.Font(None,24)
 				subprocess.call("mpc stop ", shell=True)
-        			label=font.render("Radioplayer stoped", 1, (white))
-        			screen.blit(label,(0,90))
+				label=font.render("Radioplayer stoped", 1, (white))
+				screen.blit(label,(0,90))
 				pygame.display.flip()
 				time.sleep(1)
 				sys.exit()
@@ -97,10 +98,11 @@ def main():
                         if event.type == KEYDOWN:
                                 if event.key == K_ESCAPE:
 					sys.exit()
-	#pygame.display.flip()
-	refresh_menu_screen()
-	time.sleep(0.2)
-	pygame.display.update()
+
+		print "update"
+		refresh_menu_screen()
+		time.sleep(0.2)
+		pygame.display.update()
 
 #################### EVERTHING HAS NOW BEEN DEFINED ###########################
 
@@ -116,8 +118,5 @@ white = 255, 255, 255
 yellow = 255, 255, 0
 red = 255, 0, 0
 green = 0, 255, 0
-print "1"
 refresh_menu_screen()  #refresh the menu interface 
-print "2"
 main() #check for key presses and start emergency exit
-#station_name()
