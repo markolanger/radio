@@ -15,8 +15,8 @@ def refresh_menu_screen():
 	#set up the fixed items on the menu
 	screen.fill(white) #change the colours if needed
 	font=pygame.font.Font(None,20)
-	title_font=pygame.font.Font(None,15)
-	station_font=pygame.font.Font(None,15)
+	title_font=pygame.font.Font(None,25)
+	station_font=pygame.font.Font(None,25)
 	###### display the station name and split it into 2 parts : 
 	station = subprocess.check_output("mpc current", shell=True )
 	lines=station.split(":")
