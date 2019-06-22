@@ -13,7 +13,7 @@ running = 1
 def refresh_menu_screen():
 #set up the fixed items on the menu
 	current_time = datetime.datetime.now().strftime('%H:%M:%S  %d.%m.%Y')
-	time_label = font.render(current_time, 1,(font_color))
+	time_label = font.render(current_time, 1,(black))
 	screen.fill(white) #change the colours if needed
 	font=pygame.font.Font(None,15)
 	title_font=pygame.font.Font(None,15)
